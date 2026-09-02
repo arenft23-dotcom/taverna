@@ -1,0 +1,74 @@
+#app .game-shell{height:100vh;min-height:620px}
+#app .content-grid{height:100vh;padding:0}
+#app .left-column{height:100%}
+#app .tavern-scene{height:100%;min-height:620px}
+#app .bottom-grid{display:none}
+#app .chat-panel{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;box-shadow:none;pointer-events:none}
+#app .chat-panel .panel-title{display:none}
+#app .messages{position:absolute;inset:165px 4% 106px;padding:0;overflow:hidden;pointer-events:none}
+#app .composer{position:absolute;z-index:50;bottom:28px;left:50%;width:min(600px,88%);padding:11px;background:rgba(44,32,28,.68);border:1px solid rgba(255,225,180,.42);transform:translateX(-50%);pointer-events:auto}
+#app .composer textarea{background:#fff8ea}
+#app .message{position:absolute;max-width:340px;margin:0;padding:10px 13px}
+#app .message:nth-child(1){left:7%;top:4%}
+#app .message:nth-child(2){left:30%;top:38%}
+#app .message:nth-child(3){right:8%;top:9%}
+#app .message:nth-child(4){right:23%;top:54%}
+#app .toast{z-index:30}
+@media(max-width:700px){#app .tavern-scene{height:100%;min-height:620px}#app .messages{inset:135px 12px 115px}#app .message{max-width:245px}#app .message:nth-child(1){left:2%;top:3%}#app .message:nth-child(2){left:2%;top:34%}#app .message:nth-child(3){right:2%;top:14%}#app .message:nth-child(4){right:2%;top:58%}#app .composer{bottom:20px;width:calc(100% - 28px)}}
+
+#app .topbar{background:rgba(30,22,21,.2);border-bottom:1px solid rgba(255,226,185,.14);backdrop-filter:blur(2px)}
+#app .music-control{position:absolute;z-index:55;right:20px;bottom:22px;display:flex;align-items:center;gap:7px;padding:5px 8px;background:rgba(35,25,23,.32);border:1px solid rgba(255,225,180,.2);color:#f4d6a7;backdrop-filter:blur(4px);font-size:12px}
+#app .music-control button{border:0;background:transparent;color:#f4d6a7;padding:0 3px;cursor:pointer;font-size:12px}
+#app .music-control input{width:68px;height:3px;accent-color:#e0ad60;cursor:pointer}
+#app .role-guide{position:absolute;z-index:50;left:20px;bottom:22px;display:flex;gap:9px;color:rgba(248,220,179,.6);font:10px Georgia,serif;pointer-events:none}
+#app .name-screen{position:absolute;z-index:100;inset:0;display:grid;place-items:center;background:rgba(34,24,22,.74);backdrop-filter:blur(8px);transition:opacity .35s,visibility .35s}
+#app .name-screen.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+#app .name-card{width:min(330px,calc(100% - 32px));padding:28px;background:rgba(255,248,232,.94);border:1px solid rgba(255,218,164,.62);box-shadow:0 18px 45px rgba(24,15,13,.3);text-align:center;color:#3e2b27}
+#app .name-symbol{display:block;color:#c4793c;font-size:25px;margin-bottom:10px}
+#app .name-card h2{font:400 26px Georgia,serif;margin:3px 0 8px;color:#3e2b27}
+#app .name-card p{font:13px/1.4 Georgia,serif;color:#866d5f;margin:0 0 18px}
+#app .name-card input{width:100%;padding:11px 12px;border:1px solid #d9c4a5;background:#fffaf0;color:#3e2b27;outline:0;font:14px Georgia;text-align:center}
+#app .name-card input:focus{border-color:#b85e4d;box-shadow:0 0 0 2px rgba(184,94,77,.15)}
+#app .name-card button{width:100%;margin-top:10px;padding:11px;border:0;background:#b85e4d;color:#fff7e7;font:700 12px Georgia;cursor:pointer}
+#app .section-heading{display:none}
+#app .player-aren{left:50%;bottom:150px;transform:translateX(-50%);cursor:grab}
+#app .player-aren:active{cursor:grabbing}
+#app .guest-one{left:19%;bottom:215px}
+#app .guest-two{left:34%;bottom:255px}
+#app .guest-three{right:26%;bottom:215px}
+#app .guest-four{right:10%;bottom:245px}
+#app .table-back{left:12%;bottom:205px}
+#app .table-front{right:18%;bottom:175px}
+#app .section-heading{opacity:.72}
+#app .section-heading h1{font-size:clamp(27px,2.7vw,40px);text-shadow:1px 2px 0 rgba(69,35,25,.25)}
+#app .room-footer{opacity:.55}
+#app .message{background:rgba(255,247,226,.78);border:1px solid rgba(255,235,194,.38);box-shadow:2px 3px 0 rgba(54,28,22,.16);backdrop-filter:blur(3px)}
+#app .message:after{border-color:rgba(255,247,226,.78) transparent transparent transparent}
+#app .message-avatar{opacity:.8}
+#app .messages{display:none}
+#app .player-aren{left:50%;bottom:150px;z-index:10}
+#app .player-aren .pixel-person:after{background:#356d6c;border-color:#203e43}
+#app .player-aren .pixel-person b{background:#d7a04d}
+#app .player-aren .guest-name{color:#f6d78d;font-weight:700}
+#app .player-speech{position:absolute;left:50%;bottom:100%;width:max-content;max-width:220px;transform:translateX(-50%);pointer-events:none}
+#app .player-message{position:relative!important;left:auto!important;right:auto!important;top:auto!important;display:block;width:fit-content;max-width:220px;min-width:44px;padding:9px 12px!important;text-align:left;animation:player-chat-life 7.2s ease-in-out both}
+#app .player-message p{margin:0;font:14px/1.25 Georgia,serif;color:#4a342b;overflow-wrap:anywhere}
+#app .player-message.role-me{background:rgba(221,211,188,.76);font-style:italic}
+#app .player-message.role-do{background:rgba(185,213,203,.76);font-style:italic}
+#app .player-message.role-entorno{background:rgba(211,199,173,.76)}
+#app .player-message.role-ooc{background:rgba(191,201,215,.76);font-family:"Trebuchet MS",sans-serif}
+#app .player-message.role-shout{max-width:310px;background:rgba(255,224,174,.88);border-color:rgba(255,197,103,.55);box-shadow:3px 4px 0 rgba(75,39,24,.22)}
+#app .player-message:after{left:50%;bottom:-8px;transform:translateX(-50%);border-width:8px 7px 0 7px;border-color:rgba(255,247,226,.78) transparent transparent transparent}
+#app .player-aren:after{content:"";position:absolute;left:50%;top:-18px;width:4px;height:4px;background:#f1c875;box-shadow:8px 0 #f1c875,16px 0 #f1c875;opacity:.7}
+#app .remote-player{bottom:auto;cursor:default;transform:translateX(-50%)}
+#app .remote-player .pixel-person:after{background:#526b91;border-color:#303d4b}
+#app .composer{padding:8px;background:rgba(44,32,28,.38);border:1px solid rgba(255,225,180,.28);backdrop-filter:blur(5px)}
+#app .composer textarea{background:rgba(255,248,234,.68);border:1px solid rgba(92,57,43,.12)}
+#app .composer{width:150px;height:38px;min-width:110px;min-height:34px;max-width:80vw;max-height:45vh;transition:opacity .2s ease;resize:both;overflow:auto;cursor:move}
+#app .composer textarea{height:22px;min-height:22px;padding:4px 7px;line-height:14px;transition:height .2s ease}
+#app .composer-bottom{display:none}
+#app .composer-bottom{opacity:.72}
+#app .composer-bottom{touch-action:none;user-select:none}
+#app .send-button{background:rgba(184,94,77,.72)}
+#app .quiet-button,#app .icon-button,#app .avatar-button{opacity:.68}
+@keyframes player-chat-life{0%,78%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-15px)}}
